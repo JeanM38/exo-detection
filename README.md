@@ -7,7 +7,7 @@ Afin de pouvoir traiter les collisions entre deux objets il me faut quatres donn
     * la plateforme (chaque plateforme est une entrée de tableau)
 * les positions **left** pour:
     * le tonneau
-    la plateforme
+    * la plateforme
 
 Dans le script de base du projet, chaque tonneau est réinitialisé à un intervale prédéfini symbolisant un mouvement (dans ce cas une chute), je devrais donc vérifier à chaque *frame* si les positions entrent en conflit ou non, en **pseudo-code**, voici donc mon raisonnement, cette boucle s'effectuant donc à chaque intervale :
 
