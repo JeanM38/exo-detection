@@ -64,15 +64,6 @@ class Tonneau {
   initialization = () => {
     this.intervalID = setInterval(() => {
       this.posY += 5;
-      for (const p of platforms) {
-        if (
-          this.posY + 27 >= p.top + 1 &&
-          this.posX >= p.left - parseInt(this.t.style.width.replace('px', '')) && 
-          this.posX <= p.left + p.width + 2
-        ) {
-          clearInterval(this.intervalID);
-        }
-      }
       this.t.style.top = `${this.posY}px`;
       this.detectionSurface();
     }, 50);
@@ -84,7 +75,15 @@ class Tonneau {
 
   // TODO
   detectionSurface = () => {
-    //clearInterval(this.intervalID);
+    for (const p of platforms) {
+      if (
+        this.posY + 27 >= p.top + 1 &&
+        this.posX >= p.left - parseInt(this.t.style.width.replace('px', '')) && 
+        this.posX <= p.left + p.width + 2
+      ) {
+        clearInterval(this.intervalID);
+      }
+    }
   }
 
 }
